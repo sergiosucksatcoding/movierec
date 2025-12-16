@@ -9,6 +9,8 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
+
+// Serve static files FIRST (before MongoDB connection)
 app.use(express.static('public'));
 
 // MongoDB Connection (lazy connection for serverless)
@@ -38,8 +40,8 @@ async function connectDB() {
     }
 }
 
-// Connect on first request (for serverless)
-app.use(async (req, res, next) => {
+// Connect to MongoDB ONLY for API routes (not for static files)
+app.use('/api', async (req, res, next) => {
     try {
         await connectDB();
         next();
