@@ -11,21 +11,45 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
-// MongoDB Connection
+// MongoDB Connection (lazy connection for serverless)
 const MONGODB_URI = process.env.MONGODB_URI;
-if (!MONGODB_URI) {
-    console.error('Error: MONGODB_URI is not defined in .env file');
-    process.exit(1);
+
+let mongooseConnection = null;
+
+async function connectDB() {
+    if (mongooseConnection) {
+        return mongooseConnection;
+    }
+
+    if (!MONGODB_URI) {
+        throw new Error('MONGODB_URI is not defined');
+    }
+
+    try {
+        mongooseConnection = await mongoose.connect(MONGODB_URI, {
+            serverSelectionTimeoutMS: 5000,
+            socketTimeoutMS: 45000,
+        });
+        console.log('Connected to MongoDB');
+        return mongooseConnection;
+    } catch (error) {
+        console.error('MongoDB connection error:', error);
+        throw error;
+    }
 }
 
-mongoose.connect(MONGODB_URI)
-    .then(() => {
-        console.log('Connected to MongoDB');
-    })
-    .catch((error) => {
-        console.error('MongoDB connection error:', error);
-        process.exit(1);
-    });
+// Connect on first request (for serverless)
+app.use(async (req, res, next) => {
+    try {
+        await connectDB();
+        next();
+    } catch (error) {
+        res.status(500).json({ 
+            message: 'Database connection error', 
+            error: error.message 
+        });
+    }
+});
 
 // Routes
 app.use('/api/auth', require('./routes/auth'));
