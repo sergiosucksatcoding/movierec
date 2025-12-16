@@ -10,8 +10,11 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve static files FIRST (before MongoDB connection)
-app.use(express.static('public'));
+// Serve static files FIRST (before MongoDB connection) - Fixed for Vercel
+app.use(express.static(path.join(__dirname, 'public'), {
+    maxAge: '1y',
+    etag: false
+}));
 
 // MongoDB Connection (lazy connection for serverless)
 const MONGODB_URI = process.env.MONGODB_URI;
