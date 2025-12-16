@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard - Movie Recommendations">
+    <title>Dashboard - Movie Recommendations</title>
+    <!-- Bootstrap CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="/dashboard" style="text-decoration: none; color: inherit;">🎬 BingeSeekers</a></h1>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="/dashboard" class="active">Dashboard</a></li>
+                    <li><a href="/recommendations">Recommendations</a></li>
+                    <li><a href="/watchlist">Watchlist</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Dashboard</h1>
+                <p class="subtitle" id="welcomeMessage">Welcome back!</p>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="container">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Recommendations</h3>
+                        <p class="stat-number" id="recommendationsCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Watchlist Items</h3>
+                        <p class="stat-number" id="watchlistCount">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Watched</h3>
+                        <p class="stat-number" id="watchedCount">0</p>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <h2>Quick Actions</h2>
+                    <div class="action-buttons">
+                        <a href="/recommendations" class="btn btn-primary">Get Recommendations</a>
+                        <a href="/watchlist" class="btn btn-outline">View Watchlist</a>
+                    </div>
+                </div>
+
+                <!-- User Preferences -->
+                <div class="preferences-section">
+                    <h2>Your Preferences</h2>
+                    <div class="preferences-card">
+                        <h3>Favorite Genres</h3>
+                        <div id="genresList" class="genres-list">
+                            <p>No genres selected yet. Search for movies to build your preferences!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Visualization -->
+                <div class="chart-section">
+                    <h2>Your Activity</h2>
+                    <div class="chart-container">
+                        <canvas id="activityChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Movie Recommendations App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/app.js"></script>
+    <script src="/dashboard.js"></script>
+</body>
+</html>
+

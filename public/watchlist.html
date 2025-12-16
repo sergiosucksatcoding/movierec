@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Watchlist">
+    <title>Watchlist - Movie Recommendations</title>
+    <!-- Bootstrap CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="/dashboard" style="text-decoration: none; color: inherit;">🎬 BingeSeekers</a></h1>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="/dashboard">Dashboard</a></li>
+                    <li><a href="/recommendations">Recommendations</a></li>
+                    <li><a href="/watchlist" class="active">Watchlist</a></li>
+                    <li><a href="#" id="logoutBtn">Logout</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>My Watchlist</h1>
+                <p class="subtitle">Movies and TV shows you want to watch</p>
+            </div>
+        </section>
+
+        <section class="watchlist-section">
+            <div class="container">
+                <div id="loadingIndicator" class="loading" style="display: none;">
+                    <p>Loading...</p>
+                </div>
+
+                <div id="watchlistGrid" class="movies-grid">
+                    <!-- Watchlist items will be loaded here -->
+                </div>
+
+                <div id="emptyWatchlist" class="empty-state" style="display: none;">
+                    <p>Your watchlist is empty. Start adding movies and TV shows!</p>
+                    <a href="/recommendations" class="btn btn-primary">Browse Recommendations</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Movie Recommendations App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/app.js"></script>
+    <script src="/watchlist.js"></script>
+</body>
+</html>
+

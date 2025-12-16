@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Movie and TV Recommendation Platform">
+    <title>BingeSeekers - Discover Your Next Favorite</title>
+    <!-- Bootstrap CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">🎬 BingeSeekers</h1>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Discover Your Next Favorite Movie or TV Show</h1>
+                    <p class="hero-subtitle">Personalized recommendations based on your preferences</p>
+                    <div class="hero-buttons">
+                        <a href="/register" class="btn btn-primary">Get Started</a>
+                        <a href="/login" class="btn btn-secondary">Sign In</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scrolling Movie Posters Section -->
+        <section class="movie-carousel-section">
+            <div class="movie-carousel-container">
+                <div class="movie-carousel-track" id="movieCarousel">
+                    <!-- Movie posters will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <h2>Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🔐 Secure Authentication</h3>
+                        <p>Create your account with secure password hashing and JWT authentication.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎯 Personalized Recommendations</h3>
+                        <p>Get movie and TV show recommendations tailored to your preferences and viewing history.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📺 Watchlist Management</h3>
+                        <p>Save your favorite movies and TV shows to watch later. Mark them as watched and rate them.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎨 Beautiful Interface</h3>
+                        <p>Enjoy a modern, responsive design that works seamlessly on all devices.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Movie Recommendations App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/app.js"></script>
+</body>
+</html>
+

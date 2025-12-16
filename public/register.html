@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Register for Movie Recommendations">
+    <title>Register - Movie Recommendations</title>
+    <!-- Bootstrap CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo"><a href="/" style="text-decoration: none; color: inherit;">🎬 BingeSeekers</a></h1>
+            <nav class="navbar">
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register" class="active">Register</a></li>
+                </ul>
+                <button class="hamburger" aria-label="Toggle navigation menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="auth-section">
+            <div class="container">
+                <div class="auth-card">
+                    <h1>Create Account</h1>
+                    <p class="subtitle">Join us to get personalized recommendations</p>
+                    
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="username">Username <span class="required">*</span></label>
+                            <input type="text" id="username" name="username" required aria-required="true" minlength="3" maxlength="30">
+                            <span class="error-message" id="username-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                            <span class="error-message" id="email-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password <span class="required">*</span></label>
+                            <input type="password" id="password" name="password" required aria-required="true" minlength="6">
+                            <span class="error-message" id="password-error" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required aria-required="true">
+                            <span class="error-message" id="confirmPassword-error" role="alert"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full">Create Account</button>
+                        
+                        <div class="form-success" id="formSuccess" role="alert"></div>
+                        <div class="form-error" id="formError" role="alert"></div>
+                    </form>
+
+                    <p class="auth-link">
+                        Already have an account? <a href="/login">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Movie Recommendations App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/app.js"></script>
+    <script src="/auth.js"></script>
+</body>
+</html>
+
