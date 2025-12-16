@@ -147,5 +147,5 @@ The `.env` file is in the **same folder** as `server.js` and `package.json`.
 
 ---
 
-**That's it! Follow these steps and you'll have your app running!** 🚀
+**That's it! Follow these steps and you'll have your app or website running!** 🚀
 
