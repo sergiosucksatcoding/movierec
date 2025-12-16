@@ -16,12 +16,10 @@
 3. **Create a new file** named `.env` (with the dot at the beginning!)
 4. **Copy and paste this** into the `.env` file:
 
-```env
-MONGODB_URI=mongodb+srv://kingsergio:RhHwbGFwcnn7oAms@finalprojectfundamental.gstsrdt.mongodb.net/movie-recommendations?appName=finalprojectfundamentals
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster.mongodb.net/movie-recommendations?retryWrites=true&w=majority
 JWT_SECRET=my-super-secret-key-for-jwt-tokens-change-this-later-123456789
 TMDB_API_KEY=PASTE_YOUR_TMDB_API_KEY_HERE
 PORT=3000
-```
 
 5. **Replace `PASTE_YOUR_TMDB_API_KEY_HERE`** with your actual TMDB API key
 6. **Save the file** (Ctrl+S)

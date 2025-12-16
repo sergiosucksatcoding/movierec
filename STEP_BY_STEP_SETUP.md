@@ -38,12 +38,10 @@ A `.env` file is a **secret configuration file** that stores your API keys and p
 
 Open the `.env` file you just created and copy-paste this EXACT content:
 
-```env
-MONGODB_URI=mongodb+srv://kingsergio:RhHwbGFwcnn7oAms@finalprojectfundamental.gstsrdt.mongodb.net/movie-recommendations?appName=finalprojectfundamentals
+MONGODB_URI=mongodb+srv://YOUR_USERNAME:YOUR_PASSWORD@cluster.mongodb.net/movie-recommendations?retryWrites=true&w=majority
 JWT_SECRET=my-super-secret-key-for-jwt-tokens-change-this-later-123456789
 TMDB_API_KEY=PASTE_YOUR_TMDB_API_KEY_HERE
 PORT=3000
-```
 
 **IMPORTANT**: Replace `PASTE_YOUR_TMDB_API_KEY_HERE` with your actual TMDB API key!
 
